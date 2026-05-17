@@ -480,4 +480,111 @@
                     const textoBloque = `${grupo.title}\n` + grupo.children.map(c => `- ${c.title}`).join('\n') + '\n\nEnseñame todo esto';
 
                     const headerDiv = document.createElement('div');
-                    headerDiv.className = `topic-header
+                    headerDiv.className = `topic-header ${estado[grupo.id] ? 'completed' : ''}`;
+                    headerDiv.innerHTML = `
+                        <div class="check-circle"></div>
+                        <div class="text-content">${grupo.title}</div>
+                        <button class="copy-btn" title="Copiar bloque de temas">${svgCopy}</button>
+                    `;
+                    
+                    headerDiv.addEventListener('click', (e) => {
+                        if(e.target.closest('.copy-btn')) return;
+                        togglePadre(grupo.id, grupo.children);
+                    });
+
+                    const copyBtnPadre = headerDiv.querySelector('.copy-btn');
+                    copyBtnPadre.addEventListener('click', (e) => manejarCopia(e, copyBtnPadre, textoBloque));
+
+                    groupDiv.appendChild(headerDiv);
+
+                    const subtopicsDiv = document.createElement('div');
+                    subtopicsDiv.className = 'subtopics';
+
+                    grupo.children.forEach(hijo => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = `item ${estado[hijo.id] ? 'completed' : ''}`;
+                        itemDiv.innerHTML = `
+                            <div class="check-circle"></div>
+                            <div class="text-content">${hijo.title}</div>
+                        `;
+
+                        itemDiv.addEventListener('click', () => {
+                            toggleHijo(hijo.id, grupo.id, grupo.children);
+                        });
+
+                        subtopicsDiv.appendChild(itemDiv);
+                    });
+
+                    groupDiv.appendChild(subtopicsDiv);
+                    container.appendChild(groupDiv);
+                });
+
+                actualizarProgresoPorTema();
+            }
+
+            function manejarCopia(e, btnElement, texto) {
+                e.stopPropagation();
+                navigator.clipboard.writeText(texto).then(() => {
+                    btnElement.innerHTML = svgCheck;
+                    btnElement.classList.add('copied');
+                    setTimeout(() => {
+                        btnElement.innerHTML = svgCopy;
+                        btnElement.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => console.error('Error al copiar: ', err));
+            }
+
+            function togglePadre(idPadre, hijos) {
+                const nuevoEstado = !estado[idPadre];
+                estado[idPadre] = nuevoEstado;
+                hijos.forEach(hijo => estado[hijo.id] = nuevoEstado);
+                guardarYRenderizar();
+            }
+
+            function toggleHijo(idHijo, idPadre, hermanos) {
+                estado[idHijo] = !estado[idHijo];
+                const todosCompletados = hermanos.every(h => estado[h.id]);
+                estado[idPadre] = todosCompletados;
+                guardarYRenderizar();
+            }
+
+            function guardarYRenderizar() {
+                localStorage.setItem("progresoAlgebraApp", JSON.stringify(estado));
+                renderizarLista();
+            }
+
+            function actualizarProgresoPorTema() {
+                let totalItems = 0;
+                let completados = 0;
+
+                const temasMostrados = data[temaActivo];
+                
+                temasMostrados.forEach(grupo => {
+                    totalItems++; 
+                    if (estado[grupo.id]) completados++;
+
+                    grupo.children.forEach(hijo => {
+                        totalItems++; 
+                        if (estado[hijo.id]) completados++;
+                    });
+                });
+
+                const porcentaje = totalItems === 0 ? 0 : Math.round((completados / totalItems) * 100);
+                progressBar.style.width = porcentaje + '%';
+                progressText.textContent = `${porcentaje}% Progreso del Tema ${temaActivo} (${completados}/${totalItems})`;
+            }
+
+            Object.values(data).forEach(temas => {
+                temas.forEach(grupo => {
+                    if (grupo.children.length > 0) {
+                        const todosCompletados = grupo.children.every(h => estado[h.id]);
+                        if (todosCompletados) estado[grupo.id] = true;
+                    }
+                });
+            });
+            
+            renderizarLista();
+        });
+    </script>
+</body>
+</html>
