@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario Completo - Álgebra Práctica</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEyMCIgZmlsbD0iIzJjM2U1MCIvPjxsaW5lIHgxPSIxMDAiIHkxPSI0MTIiIHgyPSI0NTAiIHkyPSI0MTIiIHN0cm9rZT0iI2VjZjBmMSIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjEwMCIgeTE9IjQxMiIgeDI9IjEwMCIgeTI9IjYwIiBzdHJva2U9IiNlY2YwZjEiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSIxMDAiIHkxPSI0MTIiIHgyPSIzODAiIHkyPSIxNTAiIHN0cm9rZT0iI2U3NGMzYyIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBvbHlnb24gcG9pbnRzPSIzODAsMTUwIDM1MCwxNDAgMzcwLDE3NSIgZmlsbD0iI2U3NGMzYyIgdHJhbnNmb3JtPSJyb3RhdGUoMTAgMzgwIDE1MCkiLz48cGF0aCBkPSJNIDE1MCAzNTAgUSAyNTAgMTAwIDQwMCAyNTAiIHN0cm9rZT0iIzM0OThkYiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+PC9zdmc+">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEyMCIgZmlsbD0iIzJjM2U1MCIvPjxsaW5lIHgxPSIxMDAiIHkxPSI0MTIiIHgyPSI0NTAiIHkyPSI0MTIiIHN0cm9rZT0iI2VjZjBmMSIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjEwMCIgeTE9IjQxMiIgeDI9IjEwMCIgeTI9IjYwIiBzdHJva2U9IiNlY2YwZjEiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSIxMDAiIHkxPSI0MTIiIHgyPSIzODAiIHkyPSIxNTAiIHN0cm9rZT0iI2U3NGMzYyIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBvbHlnb24gcG9pbnRzPSIzODAsMTUwIDM1MCwxNDAgMzcwLDE3NSIgZmlsbD0iI2U3NGMzYyIgdHJhbnNmb3JtPSJyb3RhdGUoMTAgMzgwIDE1MCkiLz48cGF0aCBkPSJNIDE1MCAzNTAgUSAyNTAgMTAwIDQwMCAyNTAiIHN0cm9rZT0iIzM0OThkYiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+PC9zdmc+">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Álgebra">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2c3e50">
+
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --accent: #3498db;
+            --success: #2ecc71;
+            --strike: #e74c3c;
+            --border-radius: 12px;
+            --nav-bg: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 3rem;
+            /* Para mejorar experiencia en móviles */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            padding: 1.5rem 1rem 1rem 1rem;
+        }
+
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--success);
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 22px;
+            color: #333;
+            pointer-events: none;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 0 1rem;
+            /* Ocultar barra de scroll en menú horizontal */
+            scrollbar-width: none;
+        }
+        nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: #ecf0f1;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            border-bottom: 4px solid transparent;
+        }
+
+        .nav-btn:hover {
+            background-color: #34495e;
+        }
+
+        .nav-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background-color: #34495e;
+        }
+
+        .list-container {
+            width: 95%;
+            max-width: 1200px;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 1.5rem;
+            align-items: start; 
+        }
+
+        @media (max-width: 768px) {
+            .list-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .topic-group {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .topic-header {
+            padding: 1rem 1.5rem;
+            background-color: #f8fafc;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eaeaea;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .topic-header:hover {
+            background-color: #f1f5f9;
+        }
+
+        .subtopics {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item {
+            padding: 0.8rem 1.5rem 0.8rem 3rem;
+            border-bottom: 1px solid #f1f1f1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item:hover {
+            background-color: #fafbfc;
+        }
+
+        .check-circle {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .completed > .check-circle {
+            background-color: var(--success);
+            border-color: var(--success);
+        }
+
+        .completed > .check-circle::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .completed > .text-content {
+            text-decoration: line-through;
+            text-decoration-color: var(--strike);
+            text-decoration-thickness: 2px;
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+        
+        .text-content {
+            transition: all 0.3s ease;
+            flex-grow: 1;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            margin-left: auto;
+            border-radius: 6px;
+            color: #95a5a6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #e2e8f0;
+            color: var(--accent);
+        }
+
+        .copy-btn.copied {
+            color: var(--success);
+        }
+        
+        .icon-svg {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Temario Práctico: Álgebra y Geometría Analítica</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">0% Progreso del Tema</div>
+            </div>
+        </div>
+        <nav id="navMenu">
+            <button class="nav-btn active" data-tema="1">Tema 1</button>
+            <button class="nav-btn" data-tema="2">Tema 2</button>
+            <button class="nav-btn" data-tema="3">Tema 3</button>
+            <button class="nav-btn" data-tema="4">Tema 4</button>
+            <button class="nav-btn" data-tema="5">Tema 5</button>
+        </nav>
+    </header>
+
+    <div class="list-container" id="listContainer">
+        </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const data = {
+                "1": [
+                    {
+                        id: "T1_B", 
+                        title: "📝 Conceptos Fundamentales",
+                        children: [
+                            { id: "T1_B1", title: "Definición" },
+                            { id: "T1_B2", title: "Igualdad" }
+                        ]
+                    },
+                    {
+                        id: "T1_C", 
+                        title: "➕ Operaciones Lineales",
+                        children: [
+                            { id: "T1_C1", title: "Suma" },
+                            { id: "T1_C2", title: "Propiedades de la suma" },
+                            { id: "T1_C3", title: "Producto por un escalar" },
+                            { id: "T1_C4", title: "Propiedades del producto" }
+                        ]
+                    },
+                    {
+                        id: "T1_D1", 
+                        title: "📐 Producto Escalar y Métricas",
+                        children: [
+                            { id: "T1_E1", title: "Norma o módulo ||v||" },
+                            { id: "T1_E2", title: "Ángulo entre vectores" },
+                            { id: "T1_E3", title: "Ortogonalidad" },
+                            { id: "T1_E4", title: "Paralelismo" },
+                            { id: "T1_E5", title: "Proyección vectorial ortogonal" },
+                            { id: "T1_E6", title: "Proyección escalar" },
+                            { id: "T1_E7", title: "Propiedades del producto escalar" }
+                        ]
+                    },
+                    {
+                        id: "T1_D2", 
+                        title: "✖️ Producto Vectorial",
+                        children: [
+                            { id: "T1_F1", title: "Propiedades del producto vectorial" }
+                        ]
+                    },
+                    {
+                        id: "T1_D3", 
+                        title: "📦 Doble Producto Mixto",
+                        children: [
+                            { id: "T1_F2", title: "Propiedades del doble producto mixto" }
+                        ]
+                    }
+                ],
+                "2": [
+                    {
+                        id: "T2_A", 
+                        title: "📏 Aplicaciones a la Recta",
+                        children: [
+                            { id: "T2_A1", title: "Ecuaciones vectorial. paramétricas y cartesianas de la recta" },
+                            { id: "T2_A2", title: "Recta por dos puntos" },
+                            { id: "T2_A3", title: "Ecuación general y segmentaria de la recta en R²" }
+                        ]
+                    },
+                    {
+                        id: "T2_B", 
+                        title: "🔗 Relaciones entre Rectas",
+                        children: [
+                            { id: "T2_B1", title: "Ángulo entre dos rectas" },
+                            { id: "T2_B2", title: "Paralelismo y ortogonalidad de rectas" }
+                        ]
+                    },
+                    {
+                        id: "T2_C", 
+                        title: "🔲 Aplicaciones al Plano",
+                        children: [
+                            { id: "T2_C1", title: "Ecuación vectorial y cartesiana del plano" },
+                            { id: "T2_C2", title: "Paralelismo y ortogonalidad de planos" }
+                        ]
+                    },
+                    {
+                        id: "T2_D", 
+                        title: "🎯 Rectas. Planos y Distancias",
+                        children: [
+                            { id: "T2_D1", title: "Paralelismo y ortogonalidad entre rectas y planos" },
+                            { id: "T2_D2", title: "Distancias" }
+                        ]
+                    }
+                ],
+                "3": [
+                    {
+                        id: "T3_A", 
+                        title: "⭕ Cónicas y Definiciones",
+                        children: [
+                            { id: "T3_A1", title: "Circunferencia – Elipse – Hipérbola – Parábola" },
+                            { id: "T3_A2", title: "Definición" }
+                        ]
+                    },
+                    {
+                        id: "T3_B", 
+                        title: "📉 Ecuaciones y Propiedades",
+                        children: [
+                            { id: "T3_B1", title: "Ecuación Canónica y General de cónicas con ejes paralelos a los coordenados" },
+                            { id: "T3_B2", title: "Propiedades de las cónicas" }
+                        ]
+                    },
+                    {
+                        id: "T3_C", 
+                        title: "✂️ Recta Tangente",
+                        children: [
+                            { id: "T3_C1", title: "Recta Tangente a una cónica" },
+                            { id: "T3_C2", title: "Regla del desdoblamiento" }
+                        ]
+                    }
+                ],
+                "4": [
+                    {
+                        id: "T4_A", 
+                        title: "🌐 Superficie y Línea",
+                        children: [
+                            { id: "T4_A1", title: "Definición" },
+                            { id: "T4_A2", title: "Superficies Cónicas" },
+                            { id: "T4_A3", title: "Superficies Cilíndricas" }
+                        ]
+                    },
+                    {
+                        id: "T4_B", 
+                        title: "🍉 Cuádricas",
+                        children: [
+                            { id: "T4_B1", title: "Superficies Esféricas – Elipsoide – Hiperboloides de una hoja y de dos hojas – Paraboloides" }
+                        ]
+                    }
+                ],
+                "5": [
+                    {
+                        id: "T5_A", 
+                        title: "🔢 Números Complejos Básicos",
+                        children: [
+                            { id: "T5_A1", title: "Definición" },
+                            { id: "T5_A2", title: "Operaciones" },
+                            { id: "T5_A3", title: "Propiedades" },
+                            { id: "T5_A4", title: "Forma binómica" },
+                            { id: "T5_A5", title: "Conjugado" },
+                            { id: "T5_A6", title: "Propiedades" }
+                        ]
+                    },
+                    {
+                        id: "T5_B", 
+                        title: "📏 Módulo y Polar",
+                        children: [
+                            { id: "T5_B1", title: "Módulo" },
+                            { id: "T5_B2", title: "Propiedades" },
+                            { id: "T5_B3", title: "Forma Polar" }
+                        ]
+                    },
+                    {
+                        id: "T5_C", 
+                        title: "⚡ Operaciones Avanzadas",
+                        children: [
+                            { id: "T5_C1", title: "Potencia y Radicación de números complejos" },
+                            { id: "T5_C2", title: "Forma Exponencial" }
+                        ]
+                    }
+                ]
+            };
+
+            let estado = JSON.parse(localStorage.getItem("progresoAlgebraApp")) || {};
+            let temaActivo = "1";
+
+            const container = document.getElementById('listContainer');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const navButtons = document.querySelectorAll('.nav-btn');
+
+            const svgCopy = `<svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+            const svgCheck = `<svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    navButtons.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    temaActivo = e.target.dataset.tema;
+                    renderizarLista();
+                });
+            });
+
+            function renderizarLista() {
+                container.innerHTML = '';
+                const temasMostrados = data[temaActivo];
+
+                temasMostrados.forEach(grupo => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'topic-group';
+
+                    const textoBloque = `${grupo.title}\n` + grupo.children.map(c => `- ${c.title}`).join('\n') + '\n\nEnseñame todo esto';
+
+                    const headerDiv = document.createElement('div');
+                    headerDiv.className = `topic-header ${estado[grupo.id] ? 'completed' : ''}`;
+                    headerDiv.innerHTML = `
+                        <div class="check-circle"></div>
+                        <div class="text-content">${grupo.title}</div>
+                        <button class="copy-btn" title="Copiar bloque de temas">${svgCopy}</button>
+                    `;
+                    
+                    headerDiv.addEventListener('click', (e) => {
+                        if(e.target.closest('.copy-btn')) return;
+                        togglePadre(grupo.id, grupo.children);
+                    });
+
+                    const copyBtnPadre = headerDiv.querySelector('.copy-btn');
+                    copyBtnPadre.addEventListener('click', (e) => manejarCopia(e, copyBtnPadre, textoBloque));
+
+                    groupDiv.appendChild(headerDiv);
+
+                    const subtopicsDiv = document.createElement('div');
+                    subtopicsDiv.className = 'subtopics';
+
+                    grupo.children.forEach(hijo => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = `item ${estado[hijo.id] ? 'completed' : ''}`;
+                        itemDiv.innerHTML = `
+                            <div class="check-circle"></div>
+                            <div class="text-content">${hijo.title}</div>
+                        `;
+
+                        itemDiv.addEventListener('click', () => {
+                            toggleHijo(hijo.id, grupo.id, grupo.children);
+                        });
+
+                        subtopicsDiv.appendChild(itemDiv);
+                    });
+
+                    groupDiv.appendChild(subtopicsDiv);
+                    container.appendChild(groupDiv);
+                });
+
+                actualizarProgresoPorTema();
+            }
+
+            function manejarCopia(e, btnElement, texto) {
+                e.stopPropagation();
+                navigator.clipboard.writeText(texto).then(() => {
+                    btnElement.innerHTML = svgCheck;
+                    btnElement.classList.add('copied');
+                    setTimeout(() => {
+                        btnElement.innerHTML = svgCopy;
+                        btnElement.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => console.error('Error al copiar: ', err));
+            }
+
+            function togglePadre(idPadre, hijos) {
+                const nuevoEstado = !estado[idPadre];
+                estado[idPadre] = nuevoEstado;
+                hijos.forEach(hijo => estado[hijo.id] = nuevoEstado);
+                guardarYRenderizar();
+            }
+
+            function toggleHijo(idHijo, idPadre, hermanos) {
+                estado[idHijo] = !estado[idHijo];
+                const todosCompletados = hermanos.every(h => estado[h.id]);
+                estado[idPadre] = todosCompletados;
+                guardarYRenderizar();
+            }
+
+            function guardarYRenderizar() {
+                localStorage.setItem("progresoAlgebraApp", JSON.stringify(estado));
+                renderizarLista();
+            }
+
+            function actualizarProgresoPorTema() {
+                let totalItems = 0;
+                let completados = 0;
+
+                const temasMostrados = data[temaActivo];
+                
+                temasMostrados.forEach(grupo => {
+                    totalItems++; 
+                    if (estado[grupo.id]) completados++;
+
+                    grupo.children.forEach(hijo => {
+                        totalItems++; 
+                        if (estado[hijo.id]) completados++;
+                    });
+                });
+
+                const porcentaje = totalItems === 0 ? 0 : Math.round((completados / totalItems) * 100);
+                progressBar.style.width = porcentaje + '%';
+                progressText.textContent = `${porcentaje}% Progreso del Tema ${temaActivo} (${completados}/${totalItems})`;
+            }
+
+            Object.values(data).forEach(temas => {
+                temas.forEach(grupo => {
+                    if (grupo.children.length > 0) {
+                        const todosCompletados = grupo.children.every(h => estado[h.id]);
+                        if (todosCompletados) estado[grupo.id] = true;
+                    }
+                });
+            });
+            
+            renderizarLista();
+        });
+    </script>
+</body>
+</html>
